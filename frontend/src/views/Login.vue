@@ -1,7 +1,7 @@
 <template>
   <div style="width: 100vw;height: 100vh;overflow: hidden;display: flex">
     <div style="flex: 1;background-color: dodgerblue">
-      <el-image style="width: 100%;height: 100%" src="https://img1.baidu.com/it/u=3844053749,2170363039&fm=253&fmt=auto&app=120&f=JPEG?w=1422&h=800"/>
+      <img style="width: 100%;height: 100%" src="@/assets/img/img_6.png"/>
     </div>
     <div class="login-title">
       <div style="font-size: 30px;font-weight: bold;">欢迎进入个人博客后端管理系统</div>
