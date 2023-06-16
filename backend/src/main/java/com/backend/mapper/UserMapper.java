@@ -23,7 +23,7 @@ public interface UserMapper {
     @Update("update blog.admin_account set password = #{password} where email = #{email}")
     int resetPasswordByEmail(String password, String email);
 
-    @Select("select * from blog.account_info where admin_username = #{adminUsername}")
+    @Select("select * from blog.admin_account where admin_username = #{username}")
     Admin findAllAccount(String username);
 
     @Update("""

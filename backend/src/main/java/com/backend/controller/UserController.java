@@ -28,7 +28,6 @@ public class UserController {
     @GetMapping("/findAllAccount")
     public RestBean<Admin> findAllAccount(@SessionAttribute("account") AccountUser user){
         Admin account = service.findAllAccount(user.getUsername());
-        System.out.println(account);
         if (account!=null)
             return RestBean.success(account);
         else

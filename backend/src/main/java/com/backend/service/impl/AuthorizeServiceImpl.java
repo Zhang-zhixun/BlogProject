@@ -1,5 +1,6 @@
 package com.backend.service.impl;
 
+import com.backend.entity.auth.AccountInfo;
 import com.backend.entity.auth.AdminAccount;
 import com.backend.entity.auth.Admin;
 import com.backend.mapper.UserMapper;
@@ -133,7 +134,6 @@ public class AuthorizeServiceImpl implements AuthorizeService {
             System.out.println("没有此邮件的用户");
             return "没有此邮件的用户";}
         if (adminAccount != null && hasAccount.equals("register")){
-
             return "此邮件的已被注册";}
         Random random = new Random();
         //生成6位数的验证码
