@@ -1,63 +1,392 @@
 /*
- Navicat Premium Data Transfer
+ Navicat MySQL Data Transfer
 
- Source Server         : aaa
+ Source Server         : localDB
  Source Server Type    : MySQL
- Source Server Version : 80030
+ Source Server Version : 80019
  Source Host           : localhost:3306
  Source Schema         : blog
 
  Target Server Type    : MySQL
- Target Server Version : 80030
+ Target Server Version : 80019
  File Encoding         : 65001
 
- Date: 15/06/2023 18:55:14
+ Date: 18/06/2023 17:53:50
 */
 
 SET NAMES utf8mb4;
 SET FOREIGN_KEY_CHECKS = 0;
 
 -- ----------------------------
--- Table structure for account_info
+-- Table structure for admin
 -- ----------------------------
-DROP TABLE IF EXISTS `account_info`;
-CREATE TABLE `account_info`  (
-  `username` varchar(20) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL,
-  `a_age` int(0) NULL DEFAULT NULL,
-  `a_image` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NULL DEFAULT NULL,
-  `a_birthday` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NULL DEFAULT NULL,
-  `a_phone` varchar(11) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NULL DEFAULT NULL,
-  `a_sex` varchar(2) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NULL DEFAULT NULL,
-  `a_idcard` varchar(18) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NULL DEFAULT NULL,
-  `a_address` varchar(50) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NULL DEFAULT NULL,
-  `a_signature` varchar(50) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NULL DEFAULT NULL,
-  `a_name` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NULL DEFAULT NULL,
-  PRIMARY KEY (`username`) USING BTREE,
-  CONSTRAINT `account_info_ibfk_1` FOREIGN KEY (`username`) REFERENCES `db_account` (`username`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE = InnoDB CHARACTER SET = utf8mb3 COLLATE = utf8mb3_general_ci ROW_FORMAT = Dynamic;
+DROP TABLE IF EXISTS `admin`;
+CREATE TABLE `admin`  (
+  `admin_username` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `age` int NULL DEFAULT NULL,
+  `image` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `birthday` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `phone` varchar(11) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `sex` varchar(2) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `idCard` varchar(18) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `address` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `signature` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  PRIMARY KEY (`admin_username`) USING BTREE,
+  CONSTRAINT `account_info_ibfk_1` FOREIGN KEY (`admin_username`) REFERENCES `admin_account` (`admin_username`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
--- Records of account_info
+-- Records of admin
 -- ----------------------------
-INSERT INTO `account_info` VALUES ('admin', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `admin` VALUES ('admin', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
 -- ----------------------------
--- Table structure for db_account
+-- Table structure for admin_account
 -- ----------------------------
-DROP TABLE IF EXISTS `db_account`;
-CREATE TABLE `db_account`  (
-  `id` int(0) NOT NULL AUTO_INCREMENT,
-  `email` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NULL DEFAULT NULL,
-  `username` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NULL DEFAULT NULL,
-  `password` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NULL DEFAULT NULL,
-  PRIMARY KEY (`id`) USING BTREE,
-  UNIQUE INDEX `unique_name`(`username`) USING BTREE,
+DROP TABLE IF EXISTS `admin_account`;
+CREATE TABLE `admin_account`  (
+  `admin_account_id` int NOT NULL AUTO_INCREMENT,
+  `email` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `admin_username` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `password` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  PRIMARY KEY (`admin_account_id`) USING BTREE,
+  UNIQUE INDEX `unique_name`(`admin_username`) USING BTREE,
   UNIQUE INDEX `unique_email`(`email`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 14 CHARACTER SET = utf8mb3 COLLATE = utf8mb3_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 14 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
--- Records of db_account
+-- Records of admin_account
 -- ----------------------------
-INSERT INTO `db_account` VALUES (1, 'zhixun2@qq.com', 'admin', '$2a$10$fVzpaZb3NClXO6CFAeiXpehd.dYE2E2rmspgpVTPoin.sfoojGNL2');
+INSERT INTO `admin_account` VALUES (1, 'zhixun2@qq.com', 'admin', '$2a$10$fVzpaZb3NClXO6CFAeiXpehd.dYE2E2rmspgpVTPoin.sfoojGNL2');
+
+-- ----------------------------
+-- Table structure for certificate_template
+-- ----------------------------
+DROP TABLE IF EXISTS `certificate_template`;
+CREATE TABLE `certificate_template`  (
+  `template_id` int NOT NULL AUTO_INCREMENT,
+  `template_name` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
+  `template_content` text CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL,
+  PRIMARY KEY (`template_id`) USING BTREE
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of certificate_template
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for chapter
+-- ----------------------------
+DROP TABLE IF EXISTS `chapter`;
+CREATE TABLE `chapter`  (
+  `chapter_id` int NOT NULL AUTO_INCREMENT,
+  `course_id` int NULL DEFAULT NULL,
+  `chapter_title` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
+  PRIMARY KEY (`chapter_id`) USING BTREE,
+  INDEX `course_id`(`course_id`) USING BTREE,
+  CONSTRAINT `chapter_ibfk_1` FOREIGN KEY (`course_id`) REFERENCES `course` (`course_id`) ON DELETE RESTRICT ON UPDATE RESTRICT
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of chapter
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for comment
+-- ----------------------------
+DROP TABLE IF EXISTS `comment`;
+CREATE TABLE `comment`  (
+  `comment_id` int NOT NULL AUTO_INCREMENT,
+  `user_id` int NULL DEFAULT NULL,
+  `course_id` int NULL DEFAULT NULL,
+  `content` varchar(500) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
+  `publish_time` timestamp NULL DEFAULT NULL,
+  `like_count` int NULL DEFAULT NULL,
+  `is_hidden` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
+  PRIMARY KEY (`comment_id`) USING BTREE,
+  INDEX `user_id`(`user_id`) USING BTREE,
+  INDEX `course_id`(`course_id`) USING BTREE,
+  CONSTRAINT `comment_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `comment_ibfk_2` FOREIGN KEY (`course_id`) REFERENCES `course` (`course_id`) ON DELETE RESTRICT ON UPDATE RESTRICT
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of comment
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for course
+-- ----------------------------
+DROP TABLE IF EXISTS `course`;
+CREATE TABLE `course`  (
+  `course_id` int NOT NULL AUTO_INCREMENT,
+  `course_name` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
+  `course_description` varchar(500) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
+  `course_price` decimal(10, 2) NULL DEFAULT NULL,
+  `teacher_id` int NULL DEFAULT NULL,
+  PRIMARY KEY (`course_id`) USING BTREE,
+  INDEX `teacher_id`(`teacher_id`) USING BTREE,
+  CONSTRAINT `course_ibfk_1` FOREIGN KEY (`teacher_id`) REFERENCES `teacher` (`teacher_id`) ON DELETE RESTRICT ON UPDATE RESTRICT
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of course
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for course_resource
+-- ----------------------------
+DROP TABLE IF EXISTS `course_resource`;
+CREATE TABLE `course_resource`  (
+  `resource_id` int NOT NULL AUTO_INCREMENT,
+  `chapter_id` int NULL DEFAULT NULL,
+  `resource_type` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
+  `resource_url` varchar(200) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
+  `sort_order` int NULL DEFAULT NULL,
+  PRIMARY KEY (`resource_id`) USING BTREE,
+  INDEX `chapter_id`(`chapter_id`) USING BTREE,
+  CONSTRAINT `course_resource_ibfk_1` FOREIGN KEY (`chapter_id`) REFERENCES `chapter` (`chapter_id`) ON DELETE RESTRICT ON UPDATE RESTRICT
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of course_resource
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for favorite
+-- ----------------------------
+DROP TABLE IF EXISTS `favorite`;
+CREATE TABLE `favorite`  (
+  `user_id` int NULL DEFAULT NULL,
+  `course_id` int NULL DEFAULT NULL,
+  `favorite_time` timestamp NULL DEFAULT NULL,
+  INDEX `user_id`(`user_id`) USING BTREE,
+  INDEX `course_id`(`course_id`) USING BTREE,
+  CONSTRAINT `favorite_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `favorite_ibfk_2` FOREIGN KEY (`course_id`) REFERENCES `course` (`course_id`) ON DELETE RESTRICT ON UPDATE RESTRICT
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of favorite
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for learning_certificate
+-- ----------------------------
+DROP TABLE IF EXISTS `learning_certificate`;
+CREATE TABLE `learning_certificate`  (
+  `certificate_id` int NOT NULL AUTO_INCREMENT,
+  `user_id` int NULL DEFAULT NULL,
+  `course_id` int NULL DEFAULT NULL,
+  `template_id` int NULL DEFAULT NULL,
+  `generate_time` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`certificate_id`) USING BTREE,
+  INDEX `user_id`(`user_id`) USING BTREE,
+  INDEX `course_id`(`course_id`) USING BTREE,
+  INDEX `template_id`(`template_id`) USING BTREE,
+  CONSTRAINT `learning_certificate_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `learning_certificate_ibfk_2` FOREIGN KEY (`course_id`) REFERENCES `course` (`course_id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `learning_certificate_ibfk_3` FOREIGN KEY (`template_id`) REFERENCES `certificate_template` (`template_id`) ON DELETE RESTRICT ON UPDATE RESTRICT
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of learning_certificate
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for learning_progress
+-- ----------------------------
+DROP TABLE IF EXISTS `learning_progress`;
+CREATE TABLE `learning_progress`  (
+  `user_id` int NULL DEFAULT NULL,
+  `chapter_id` int NULL DEFAULT NULL,
+  `resource_id` int NULL DEFAULT NULL,
+  `progress` int NULL DEFAULT NULL,
+  INDEX `user_id`(`user_id`) USING BTREE,
+  INDEX `chapter_id`(`chapter_id`) USING BTREE,
+  INDEX `resource_id`(`resource_id`) USING BTREE,
+  CONSTRAINT `learning_progress_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `learning_progress_ibfk_2` FOREIGN KEY (`chapter_id`) REFERENCES `chapter` (`chapter_id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `learning_progress_ibfk_3` FOREIGN KEY (`resource_id`) REFERENCES `course_resource` (`resource_id`) ON DELETE RESTRICT ON UPDATE RESTRICT
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of learning_progress
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for payment_channel
+-- ----------------------------
+DROP TABLE IF EXISTS `payment_channel`;
+CREATE TABLE `payment_channel`  (
+  `channel_id` int NOT NULL AUTO_INCREMENT,
+  `channel_name` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
+  PRIMARY KEY (`channel_id`) USING BTREE
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of payment_channel
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for purchase_record
+-- ----------------------------
+DROP TABLE IF EXISTS `purchase_record`;
+CREATE TABLE `purchase_record`  (
+  `record_id` int NOT NULL AUTO_INCREMENT,
+  `user_id` int NULL DEFAULT NULL,
+  `course_id` int NULL DEFAULT NULL,
+  `cost` decimal(10, 2) NULL DEFAULT NULL,
+  `purchase_time` timestamp NULL DEFAULT NULL,
+  `payment_channel_id` int NULL DEFAULT NULL,
+  PRIMARY KEY (`record_id`) USING BTREE,
+  INDEX `user_id`(`user_id`) USING BTREE,
+  INDEX `course_id`(`course_id`) USING BTREE,
+  INDEX `payment_channel_id`(`payment_channel_id`) USING BTREE,
+  CONSTRAINT `purchase_record_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `purchase_record_ibfk_2` FOREIGN KEY (`course_id`) REFERENCES `course` (`course_id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `purchase_record_ibfk_3` FOREIGN KEY (`payment_channel_id`) REFERENCES `payment_channel` (`channel_id`) ON DELETE RESTRICT ON UPDATE RESTRICT
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of purchase_record
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for reply
+-- ----------------------------
+DROP TABLE IF EXISTS `reply`;
+CREATE TABLE `reply`  (
+  `reply_id` int NOT NULL AUTO_INCREMENT,
+  `user_id` int NULL DEFAULT NULL,
+  `comment_id` int NULL DEFAULT NULL,
+  `content` varchar(500) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
+  `publish_time` timestamp NULL DEFAULT NULL,
+  `is_hidden` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
+  PRIMARY KEY (`reply_id`) USING BTREE,
+  INDEX `user_id`(`user_id`) USING BTREE,
+  INDEX `comment_id`(`comment_id`) USING BTREE,
+  CONSTRAINT `reply_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `reply_ibfk_2` FOREIGN KEY (`comment_id`) REFERENCES `comment` (`comment_id`) ON DELETE RESTRICT ON UPDATE RESTRICT
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of reply
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for system_message
+-- ----------------------------
+DROP TABLE IF EXISTS `system_message`;
+CREATE TABLE `system_message`  (
+  `message_id` int NOT NULL AUTO_INCREMENT,
+  `content` varchar(500) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
+  `message_status` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
+  `send_time` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`message_id`) USING BTREE
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of system_message
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for teacher
+-- ----------------------------
+DROP TABLE IF EXISTS `teacher`;
+CREATE TABLE `teacher`  (
+  `teacher_id` int NOT NULL AUTO_INCREMENT,
+  `name` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
+  `gender` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
+  `age` int NULL DEFAULT NULL,
+  `user_account_username` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
+  PRIMARY KEY (`teacher_id`) USING BTREE,
+  INDEX `user_account_username`(`user_account_username`) USING BTREE,
+  CONSTRAINT `teacher_ibfk_1` FOREIGN KEY (`user_account_username`) REFERENCES `user_account` (`user_account_username`) ON DELETE RESTRICT ON UPDATE RESTRICT
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of teacher
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for user
+-- ----------------------------
+DROP TABLE IF EXISTS `user`;
+CREATE TABLE `user`  (
+  `user_id` int NOT NULL AUTO_INCREMENT,
+  `name` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
+  `gender` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
+  `age` int NULL DEFAULT NULL,
+  `school` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
+  `email` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
+  `identity` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
+  `user_account_username` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
+  PRIMARY KEY (`user_id`) USING BTREE,
+  INDEX `user_account_username`(`user_account_username`) USING BTREE,
+  CONSTRAINT `user_ibfk_1` FOREIGN KEY (`user_account_username`) REFERENCES `user_account` (`user_account_username`) ON DELETE RESTRICT ON UPDATE RESTRICT
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of user
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for user_account
+-- ----------------------------
+DROP TABLE IF EXISTS `user_account`;
+CREATE TABLE `user_account`  (
+  `user_account_username` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `password` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
+  PRIMARY KEY (`user_account_username`) USING BTREE
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of user_account
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for user_course_relationship
+-- ----------------------------
+DROP TABLE IF EXISTS `user_course_relationship`;
+CREATE TABLE `user_course_relationship`  (
+  `user_id` int NULL DEFAULT NULL,
+  `course_id` int NULL DEFAULT NULL,
+  `favorite_status` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
+  `purchase_status` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
+  `learning_status` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
+  `learning_progress` int NULL DEFAULT NULL,
+  INDEX `user_id`(`user_id`) USING BTREE,
+  INDEX `course_id`(`course_id`) USING BTREE,
+  CONSTRAINT `user_course_relationship_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `user_course_relationship_ibfk_2` FOREIGN KEY (`course_id`) REFERENCES `course` (`course_id`) ON DELETE RESTRICT ON UPDATE RESTRICT
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of user_course_relationship
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for user_message
+-- ----------------------------
+DROP TABLE IF EXISTS `user_message`;
+CREATE TABLE `user_message`  (
+  `message_id` int NOT NULL AUTO_INCREMENT,
+  `sender_id` int NULL DEFAULT NULL,
+  `receiver_id` int NULL DEFAULT NULL,
+  `content` varchar(500) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
+  `message_status` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
+  `send_time` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`message_id`) USING BTREE,
+  INDEX `sender_id`(`sender_id`) USING BTREE,
+  INDEX `receiver_id`(`receiver_id`) USING BTREE,
+  CONSTRAINT `user_message_ibfk_1` FOREIGN KEY (`sender_id`) REFERENCES `user` (`user_id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `user_message_ibfk_2` FOREIGN KEY (`receiver_id`) REFERENCES `user` (`user_id`) ON DELETE RESTRICT ON UPDATE RESTRICT
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of user_message
+-- ----------------------------
 
 SET FOREIGN_KEY_CHECKS = 1;
