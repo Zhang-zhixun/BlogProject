@@ -1,6 +1,5 @@
 package com.backend.service.impl;
 
-import com.backend.entity.auth.AccountInfo;
 import com.backend.entity.auth.AdminAccount;
 import com.backend.entity.auth.Admin;
 import com.backend.mapper.UserMapper;

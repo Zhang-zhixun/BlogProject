@@ -2,8 +2,6 @@ package com.backend.service;
 
 import com.backend.entity.auth.AdminAccount;
 import com.backend.entity.auth.Admin;
-import com.backend.entity.auth.Account;
-import com.backend.entity.auth.AccountInfo;
 import org.springframework.security.core.userdetails.UserDetailsService;
 
 public interface AuthorizeService extends UserDetailsService {

@@ -1,7 +1,7 @@
 package com.backend.controller;
 
 
-import com.backend.entity.RestBean;
+import com.backend.entity.tools.RestBean;
 import com.backend.entity.auth.Admin;
 import com.backend.entity.user.AccountUser;
 import com.backend.service.AuthorizeService;

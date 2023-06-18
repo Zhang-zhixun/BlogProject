@@ -5,25 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1d4363a4-6264-4afb-93f7-b6d6f14ed35d" name="更改" comment="博客后端系统初始化框架功能包含：注册，登录，首页，忘记密码">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/72cd9b07-b616-45ba-bcad-124c6ffbcd19.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/72cd9b07-b616-45ba-bcad-124c6ffbcd19/storage_v2/_src_/schema/information_schema.FNRwLQ.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/72cd9b07-b616-45ba-bcad-124c6ffbcd19/storage_v2/_src_/schema/mysql.osA4Bg.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/72cd9b07-b616-45ba-bcad-124c6ffbcd19/storage_v2/_src_/schema/performance_schema.kIw0nw.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/72cd9b07-b616-45ba-bcad-124c6ffbcd19/storage_v2/_src_/schema/sys.zb4BAA.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/backend/entity/auth/Account.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/backend/entity/auth/AccountInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/72cd9b07-b616-45ba-bcad-124c6ffbcd19.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/72cd9b07-b616-45ba-bcad-124c6ffbcd19.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/backend/config/SecurityConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/backend/config/SecurityConfiguration.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/backend/controller/AuthorizeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/backend/controller/AuthorizeController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/backend/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/backend/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/backend/mapper/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/backend/mapper/UserMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/backend/entity/RestBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/backend/entity/tools/RestBean.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/backend/entity/auth/Account.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/backend/entity/auth/AccountInfo.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/backend/service/AuthorizeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/backend/service/AuthorizeService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/backend/service/impl/AuthorizeServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/backend/service/impl/AuthorizeServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/resources/application.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/components.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/LoginCom/LoginPage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/LoginCom/LoginPage.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/router/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/tsconfig.app.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/tsconfig.app.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,7 +55,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "jdk.selected.JAVA_MODULE": "17",
-    "last_opened_file_path": "C:/Users/13367/Desktop/厦理大三下学期/Blog/BlogProje/BlogProject/frontend/src/components/indexCom/comment",
+    "last_opened_file_path": "C:/Users/Jeason黄/Desktop/Springboot/BlogProject-master/backend/src/main/java/com/backend/entity",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -160,6 +152,7 @@
       <workItem from="1686623922087" duration="1130000" />
       <workItem from="1686800272375" duration="7050000" />
       <workItem from="1686824121057" duration="2276000" />
+      <workItem from="1687082348118" duration="4087000" />
     </task>
     <task id="LOCAL-00001" summary="博客后端系统初始化框架功能包含：注册，登录，首页，忘记密码">
       <created>1686824454400</created>

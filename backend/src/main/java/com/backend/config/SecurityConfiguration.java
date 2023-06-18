@@ -1,9 +1,8 @@
 package com.backend.config;
 
 import com.alibaba.fastjson.JSONObject;
-import com.backend.entity.RestBean;
+import com.backend.entity.tools.RestBean;
 import com.backend.service.AuthorizeService;
-import com.backend.service.impl.AuthorizeServiceImpl;
 import jakarta.annotation.Resource;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
