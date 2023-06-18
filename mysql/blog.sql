@@ -125,6 +125,7 @@ CREATE TABLE `course`  (
   `course_description` varchar(500) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
   `course_price` decimal(10, 2) NULL DEFAULT NULL,
   `teacher_id` int NULL DEFAULT NULL,
+  `online_status` int DEFAULT 0,
   PRIMARY KEY (`course_id`) USING BTREE,
   INDEX `teacher_id`(`teacher_id`) USING BTREE,
   CONSTRAINT `course_ibfk_1` FOREIGN KEY (`teacher_id`) REFERENCES `teacher` (`teacher_id`) ON DELETE RESTRICT ON UPDATE RESTRICT
@@ -282,7 +283,7 @@ DROP TABLE IF EXISTS `system_message`;
 CREATE TABLE `system_message`  (
   `message_id` int NOT NULL AUTO_INCREMENT,
   `content` varchar(500) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
-  `message_status` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
+  `message_status` int DEFAULT 0,
   `send_time` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`message_id`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
@@ -353,9 +354,9 @@ DROP TABLE IF EXISTS `user_course_relationship`;
 CREATE TABLE `user_course_relationship`  (
   `user_id` int NULL DEFAULT NULL,
   `course_id` int NULL DEFAULT NULL,
-  `favorite_status` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
-  `purchase_status` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
-  `learning_status` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
+  `favorite_status` int DEFAULT 0,
+  `purchase_status` int DEFAULT 0,
+  `learning_status` int DEFAULT 0,
   `learning_progress` int NULL DEFAULT NULL,
   INDEX `user_id`(`user_id`) USING BTREE,
   INDEX `course_id`(`course_id`) USING BTREE,
@@ -376,7 +377,7 @@ CREATE TABLE `user_message`  (
   `sender_id` int NULL DEFAULT NULL,
   `receiver_id` int NULL DEFAULT NULL,
   `content` varchar(500) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
-  `message_status` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
+  `message_status` int DEFAULT 0,
   `send_time` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`message_id`) USING BTREE,
   INDEX `sender_id`(`sender_id`) USING BTREE,
