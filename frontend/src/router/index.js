@@ -48,6 +48,22 @@ const router = createRouter({
                     }
                 },
                 {
+                    path: 'course',
+                    name: 'main-course',
+                    component: () => import('@/components/indexCom/course/coursePage.vue'),
+                    meta: {
+                        title : '课程管理'
+                    }
+                },
+                {
+                    path: 'courseInsert',
+                    name: 'main-courseInsert',
+                    component: () => import('@/components/indexCom/course/courseInsertPage.vue'),
+                    meta: {
+                        title : '课程添加'
+                    }
+                },
+                {
                     path: 'classify',
                     name: 'main-classify',
                     component: () => import('@/components/indexCom/classify/classifyPage.vue'),

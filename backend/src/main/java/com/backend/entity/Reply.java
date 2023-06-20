@@ -2,6 +2,8 @@ package com.backend.entity;
 
 import lombok.Data;
 
+import java.sql.Timestamp;
+
 @Data
 public class Reply {
 
@@ -9,7 +11,7 @@ public class Reply {
   private User user;
   private Comment comment;
   private String content;
-  private String publishTime;
+  private Timestamp publishTime;
   private long isHidden;
 
 

@@ -2,6 +2,8 @@ package com.backend.entity;
 
 import lombok.Data;
 
+import java.sql.Timestamp;
+
 @Data
 public class UserMessage {
 
@@ -10,6 +12,6 @@ public class UserMessage {
   private User receiver;
   private String content;
   private long messageStatus;
-  private String sendTime;
+  private Timestamp sendTime;
 
 }

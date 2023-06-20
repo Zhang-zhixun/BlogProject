@@ -31,44 +31,51 @@
               <span>文章管理</span>
             </el-menu-item>
 
-          <el-menu-item index="3" @click="router.push('/index/classify')">
+          <el-menu-item index="3" @click="router.push('/index/course')">
+            <el-icon>
+              <document/>
+            </el-icon>
+            <span>课程管理</span>
+          </el-menu-item>
+
+          <el-menu-item index="4" @click="router.push('/index/classify')">
             <el-icon><User /></el-icon>
             <span>分类管理</span>
           </el-menu-item>
 
-          <el-menu-item index="4" @click="router.push('/index/tag')">
+          <el-menu-item index="5" @click="router.push('/index/tag')">
             <el-icon><Van /></el-icon>
             <span>标签管理</span>
           </el-menu-item>
 
-          <el-menu-item index="5" @click="router.push('/index/comment')">
+          <el-menu-item index="6" @click="router.push('/index/comment')">
             <el-icon><Goods /></el-icon>
             <span>评论管理</span>
           </el-menu-item>
 
-          <el-menu-item index="6" @click="router.push('/index/user')">
+          <el-menu-item index="7" @click="router.push('/index/user')">
             <el-icon><Money /></el-icon>
             <span>用户管理</span>
           </el-menu-item>
 
-          <el-menu-item index="7" @click="router.push('/index/resources')">
+          <el-menu-item index="8" @click="router.push('/index/resources')">
             <el-icon><Money /></el-icon>
             <span>资源管理</span>
           </el-menu-item>
 
-          <el-menu-item index="11" @click="router.push('/index/customerService')">
+          <el-menu-item index="9" @click="router.push('/index/customerService')">
             <el-icon><CoffeeCup /></el-icon>
             <span>客服管理</span>
           </el-menu-item>
 
-          <el-menu-item index="12" @click="router.push('/index/system')">
+          <el-menu-item index="10" @click="router.push('/index/system')">
             <el-icon>
               <setting/>
             </el-icon>
             <span>系统设置</span>
           </el-menu-item>
 
-          <el-menu-item index="13" @click="loginout()">
+          <el-menu-item index="11" @click="loginout()">
             <el-icon><SwitchButton /></el-icon>
             <span>退出系统</span>
           </el-menu-item>

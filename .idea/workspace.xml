@@ -4,7 +4,39 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1d4363a4-6264-4afb-93f7-b6d6f14ed35d" name="更改" comment="添加了数据库实体" />
+    <list default="true" id="1d4363a4-6264-4afb-93f7-b6d6f14ed35d" name="更改" comment="增加了显示课程、添加课程、删除课程，以及一些mapper和service、controller的创建">
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/backend/controller/CourseController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/backend/controller/TeachController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/backend/controller/TeacherController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/backend/entity/Teach.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/backend/mapper/CourseMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/backend/mapper/TeachMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/backend/mapper/TeacherMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/backend/service/CourseService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/backend/service/TeachService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/backend/service/TeacherService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/backend/service/impl/CourseServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/backend/service/impl/TeachServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/backend/service/impl/TeacherServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/indexCom/course/courseEditPage.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/indexCom/course/courseInsertPage.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/indexCom/course/coursePage.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/72cd9b07-b616-45ba-bcad-124c6ffbcd19.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/72cd9b07-b616-45ba-bcad-124c6ffbcd19.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/backend/entity/Comment.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/backend/entity/Comment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/backend/entity/Favorite.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/backend/entity/Favorite.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/backend/entity/LearningCertificate.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/backend/entity/LearningCertificate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/backend/entity/PurchaseRecord.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/backend/entity/PurchaseRecord.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/backend/entity/Reply.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/backend/entity/Reply.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/backend/entity/SystemMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/backend/entity/SystemMessage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/backend/entity/UserMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/backend/entity/UserMessage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/components.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/indexCom/index/Menu.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/indexCom/index/Menu.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/router/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysql/blog.sql" beforeDir="false" afterPath="$PROJECT_DIR$/mysql/blog.sql" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,8 +46,13 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Vue Single File Component" />
+        <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
+  </component>
+  <component name="GithubDefaultAccount">
+    <option name="defaultAccountId" value="bd19b332-eb7d-4567-993f-9caac2cabc56" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -28,7 +65,9 @@
     </option>
   </component>
   <component name="ProjectId" id="2R8Fh6x60TH8cOrmmaceeFyG6xv" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
     <option name="showMembers" value="true" />
@@ -43,7 +82,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "jdk.selected.JAVA_MODULE": "17",
-    "last_opened_file_path": "C:/Users/Jeason黄/Desktop/Springboot/BlogProject-master",
+    "last_opened_file_path": "C:/Users/Jeason黄/Desktop/Springboot/BlogProject-master/backend/src/main/java/com/backend/entity",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -52,7 +91,7 @@
     "project.structure.last.edited": "模块",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable",
     "spring.configuration.checksum": "ab0d07d14d3ca372373eeb07bf2c15a8",
     "ts.external.directory.path": "C:\\Users\\Jeason黄\\Desktop\\Springboot\\BlogProject-master\\frontend\\node_modules\\typescript\\lib",
     "vue.rearranger.settings.migration": "true"
@@ -65,11 +104,14 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Jeason黄\Desktop\Springboot\BlogProject-master\frontend\src\components\indexCom\course\chapter" />
+      <recent name="C:\Users\Jeason黄\Desktop\Springboot\BlogProject-master\frontend\src\components\indexCom\course" />
       <recent name="C:\Users\13367\Desktop\厦理大三下学期\Blog\BlogProje\BlogProject\frontend\src\components\indexCom\comment" />
       <recent name="C:\Users\13367\Desktop\厦理大三下学期\Blog\BlogProje\BlogProject\frontend\src\components\indexCom" />
       <recent name="C:\Users\13367\Desktop\厦理大三下学期\Blog\BlogProje\BlogProject\frontend\src\components\indexCom\customerService" />
-      <recent name="C:\Users\13367\Desktop\厦理大三下学期\Blog\BlogProje\BlogProject\frontend\src\components" />
-      <recent name="C:\Users\13367\Desktop\厦理大三下学期\Blog\BlogProje\BlogProject\frontend" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Jeason黄\Desktop\Springboot\BlogProject-master\mysql" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.backend.config" />
@@ -148,7 +190,9 @@
       <workItem from="1686800272375" duration="7050000" />
       <workItem from="1686824121057" duration="2276000" />
       <workItem from="1687082348118" duration="4807000" />
-      <workItem from="1687088151255" duration="300000" />
+      <workItem from="1687088151255" duration="2166000" />
+      <workItem from="1687178981942" duration="8913000" />
+      <workItem from="1687220920965" duration="20631000" />
     </task>
     <task id="LOCAL-00001" summary="博客后端系统初始化框架功能包含：注册，登录，首页，忘记密码">
       <created>1686824454400</created>
@@ -171,7 +215,14 @@
       <option name="project" value="LOCAL" />
       <updated>1687088267553</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="添加了数据库实体">
+      <created>1687088521830</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1687088521830</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -191,6 +242,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="博客后端系统初始化框架功能包含：注册，登录，首页，忘记密码" />
     <MESSAGE value="添加了数据库实体" />
-    <option name="LAST_COMMIT_MESSAGE" value="添加了数据库实体" />
+    <MESSAGE value="增加了显示课程、添加课程、删除课程，以及一些mapper和service、controller的创建" />
+    <option name="LAST_COMMIT_MESSAGE" value="增加了显示课程、添加课程、删除课程，以及一些mapper和service、controller的创建" />
   </component>
 </project>

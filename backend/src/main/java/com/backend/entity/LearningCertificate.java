@@ -3,6 +3,8 @@ package com.backend.entity;
 
 import lombok.Data;
 
+import java.sql.Timestamp;
+
 @Data
 public class LearningCertificate {
 
@@ -10,7 +12,7 @@ public class LearningCertificate {
   private User user;
   private Course course;
   private CertificateTemplate certificateTemplate;
-  private String generateTime;
+  private Timestamp generateTime;
 
 
 }

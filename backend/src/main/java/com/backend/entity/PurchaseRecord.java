@@ -2,6 +2,8 @@ package com.backend.entity;
 
 import lombok.Data;
 
+import java.sql.Timestamp;
+
 @Data
 public class PurchaseRecord {
 
@@ -9,7 +11,7 @@ public class PurchaseRecord {
   private User user;
   private Course course;
   private double cost;
-  private String purchaseTime;
+  private Timestamp purchaseTime;
   private PaymentChannel paymentChannel;
 
 }
