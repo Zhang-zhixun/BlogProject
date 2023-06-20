@@ -119,6 +119,7 @@ CREATE TABLE `chapter`  (
   `chapter_id` int NOT NULL AUTO_INCREMENT,
   `course_id` int NULL DEFAULT NULL,
   `chapter_title` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
+  `sort_order` int NULL DEFAULT NULL,
   PRIMARY KEY (`chapter_id`) USING BTREE,
   INDEX `course_id`(`course_id`) USING BTREE,
   CONSTRAINT `chapter_ibfk_1` FOREIGN KEY (`course_id`) REFERENCES `course` (`course_id`) ON DELETE RESTRICT ON UPDATE RESTRICT
