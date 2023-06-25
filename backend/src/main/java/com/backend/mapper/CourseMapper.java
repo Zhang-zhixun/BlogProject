@@ -14,7 +14,7 @@ public interface CourseMapper {
             @Result(property = "courseName", column = "course_name"),
             @Result(property = "courseDescription", column = "course_description"),
             @Result(property = "coursePrice", column = "course_price"),
-            @Result(property = "teacher", column = "teacher_id", many = @Many(select = "com.backend.mapper.TeacherMapper.findTeacherById")),
+            @Result(property = "teachers", column = "course_id", many = @Many(select = "com.backend.mapper.TeacherMapper.findTeacherByCourseId")),
             @Result(property = "onlineStatus", column = "online_status")
     })
     List<Course> findAllCourse();
@@ -25,25 +25,56 @@ public interface CourseMapper {
             @Result(property = "courseName", column = "course_name"),
             @Result(property = "courseDescription", column = "course_description"),
             @Result(property = "coursePrice", column = "course_price"),
-            @Result(property = "teacher", column = "teacher_id", one = @One(select = "com.backend.mapper.TeacherMapper.findTeacherById")),
+            @Result(property = "teachers", column = "course_id", many = @Many(select = "com.backend.mapper.TeacherMapper.findTeacherByCourseId")),
             @Result(property = "onlineStatus", column = "online_status")
     })
     Course findCourseById(int id);
 
-    @Select("select * from blog.course where course_name = #{name}")
+    @Select("call getByNameCourse(#{name})")
     @Results({
             @Result(property = "courseId", column = "course_id"),
             @Result(property = "courseName", column = "course_name"),
             @Result(property = "courseDescription", column = "course_description"),
             @Result(property = "coursePrice", column = "course_price"),
-            @Result(property = "teacher", column = "teacher_id", one = @One(select = "com.backend.mapper.TeacherMapper.findTeacherById")),
+            @Result(property = "teachers", column = "course_id", many = @Many(select = "com.backend.mapper.TeacherMapper.findTeacherByCourseId")),
             @Result(property = "onlineStatus", column = "online_status")
     })
-    Course findCourseByName(String name);
+    List<Course> findCourseByName(String name);
+
+    @Select("""
+            select * from course
+            where course_id in (
+            select course_id from teach
+            where teacher_id in(
+            select teacher_id from teacher
+            where name like concat('%',#{name},'%')
+            )
+            );
+            """)
+    @Results({
+            @Result(property = "courseId", column = "course_id"),
+            @Result(property = "courseName", column = "course_name"),
+            @Result(property = "courseDescription", column = "course_description"),
+            @Result(property = "coursePrice", column = "course_price"),
+            @Result(property = "teachers", column = "course_id", many = @Many(select = "com.backend.mapper.TeacherMapper.findTeacherByCourseId")),
+            @Result(property = "onlineStatus", column = "online_status")
+    })
+    List<Course> findCourseByTName(String name);
+
+    @Select("select * from blog.course where online_status = #{status}")
+    @Results({
+            @Result(property = "courseId", column = "course_id"),
+            @Result(property = "courseName", column = "course_name"),
+            @Result(property = "courseDescription", column = "course_description"),
+            @Result(property = "coursePrice", column = "course_price"),
+            @Result(property = "teachers", column = "course_id", many = @Many(select = "com.backend.mapper.TeacherMapper.findTeacherByCourseId")),
+            @Result(property = "onlineStatus", column = "online_status")
+    })
+    List<Course> findCourseByIsOnline(int status);
 
     @Insert("""
-            insert into blog.course (course_name,course_description,course_price,teacher_id,online_status) VALUES
-            (#{courseName},#{courseDescription},#{coursePrice},#{teacher.teacherId},#{onlineStatus})
+            insert into blog.course (course_name,course_description,course_price,online_status) VALUES
+            (#{courseName},#{courseDescription},#{coursePrice},#{onlineStatus})
             """)
     boolean insertCourse(Course course);
 
@@ -52,7 +83,7 @@ public interface CourseMapper {
 
     @Update("""
             update blog.course set course_name=#{courseName},course_description=#{courseDescription},
-            course_price=#{coursePrice},teacher_id=#{teacher.teacherId},online_status=#{onlineStatus}
+            course_price=#{coursePrice},online_status=#{onlineStatus}
             where course_id = #{courseId}
             """)
     boolean updateCourse(Course course);

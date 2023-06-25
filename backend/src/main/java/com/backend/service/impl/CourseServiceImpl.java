@@ -25,8 +25,18 @@ public class CourseServiceImpl implements CourseService {
     }
 
     @Override
-    public Course findCourseByName(String name) {
+    public List<Course> findCourseByName(String name) {
         return courseMapper.findCourseByName(name);
+    }
+
+    @Override
+    public List<Course> findCourseByTName(String name) {
+        return courseMapper.findCourseByTName(name);
+    }
+
+    @Override
+    public List<Course> findCourseByIsOnline(int status) {
+        return courseMapper.findCourseByIsOnline(status);
     }
 
     @Override

@@ -35,8 +35,11 @@ public interface TeachMapper {
             """)
     boolean insertTeach(Teach teach);
 
-    @Delete("delete from blog.teach where teacher_id = #{tid} course_id = #{cid}")
-    boolean deleteteach(int tid,int cid);
+    @Delete("delete from blog.teach where teacher_id = #{tid} and course_id = #{cid}")
+    boolean deleteteachByTidAndCid(int tid,int cid);
+
+    @Delete("delete from blog.teach where course_id = #{cid}")
+    boolean deleteteachByCid(int cid);
 
     @Update("""
             update blog.teach set teacher_id=#{teacher.teacherId},course_id=#{course.courseId}

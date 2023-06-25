@@ -9,5 +9,5 @@ public class Chapter {
   private long chapterId;
   private Course course;
   private String chapterTitle;
-
+  private long sortOrder;
 }

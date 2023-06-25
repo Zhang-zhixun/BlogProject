@@ -34,8 +34,13 @@ public class TeachServiceImpl implements TeachService {
     }
 
     @Override
-    public boolean deleteteach(int tid, int cid) {
-        return teachMapper.deleteteach(tid,cid);
+    public boolean deleteteachByTidAndCid(int tid, int cid) {
+        return teachMapper.deleteteachByTidAndCid(tid,cid);
+    }
+
+    @Override
+    public boolean deleteteachByCid(int cid) {
+        return teachMapper.deleteteachByCid(cid);
     }
 
     @Override

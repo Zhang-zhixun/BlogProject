@@ -64,6 +64,62 @@ const router = createRouter({
                     }
                 },
                 {
+                    path: 'courseEdit/:id',
+                    name: 'main-courseEdit',
+                    component: () => import('@/components/indexCom/course/courseEditPage.vue'),
+                    meta: {
+                        title : '课程编辑'
+                    }
+                },
+                {
+                    path: 'chapter/:id',
+                    name: 'main-chapter',
+                    component: () => import('@/components/indexCom/chapter/chapterPage.vue'),
+                    meta: {
+                        title : '章节管理'
+                    }
+                },
+                {
+                    path: 'chapterInsert/:id',
+                    name: 'main-chapterInsert',
+                    component: () => import('@/components/indexCom/chapter/chapterInsertPage.vue'),
+                    meta: {
+                        title : '章节添加'
+                    }
+                },
+                {
+                    path: 'chapterEdit/:id',
+                    name: 'main-chapterEdit',
+                    component: () => import('@/components/indexCom/chapter/chapterEditPage.vue'),
+                    meta: {
+                        title : '章节编辑'
+                    }
+                },
+                {
+                    path: 'courseResource/:id',
+                    name: 'main-courseResource',
+                    component: () => import('@/components/indexCom/courseResource/courseResourcePage.vue'),
+                    meta: {
+                        title : '课程资源管理'
+                    }
+                },
+                {
+                    path: 'courseResourceInsert/:id',
+                    name: 'main-courseResourceInsert',
+                    component: () => import('@/components/indexCom/courseResource/courseResourceInsertPage.vue'),
+                    meta: {
+                        title : '课程资源添加'
+                    }
+                },
+                {
+                    path: 'courseResourceEdit/:id',
+                    name: 'main-courseResourceEdit',
+                    component: () => import('@/components/indexCom/courseResource/courseResourceEditPage.vue'),
+                    meta: {
+                        title : '课程资源编辑'
+                    }
+                },
+                {
                     path: 'classify',
                     name: 'main-classify',
                     component: () => import('@/components/indexCom/classify/classifyPage.vue'),
@@ -71,7 +127,6 @@ const router = createRouter({
                         title : '分类管理'
                     }
                 },
-                //ag/:id
                 {
                     path: 'tag',
                     name: 'main-tag',

@@ -14,6 +14,14 @@ public interface TeacherMapper {
     @Select("select * from blog.teacher")
     List<Teacher> findAllTeacher();
 
+    @Select("""
+            SELECT t.*
+            FROM teacher t
+            JOIN teach tc ON t.teacher_id = tc.teacher_id
+            WHERE tc.course_id = #{id};
+            """)
+    List<Teacher> findTeacherByCourseId(int id);
+
     @Select("select * from blog.teacher where name = #{name}")
     List<Teacher> findTeacherByName(String name);
 

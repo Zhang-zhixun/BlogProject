@@ -13,7 +13,9 @@ public interface TeachService {
 
     boolean insertTeach(Teach teach);
 
-    boolean deleteteach(int tid,int cid);
+    boolean deleteteachByTidAndCid(int tid,int cid);
+
+    boolean deleteteachByCid(int cid);
 
     boolean updateTeach(Teach teach);
 }

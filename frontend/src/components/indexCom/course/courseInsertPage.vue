@@ -38,7 +38,24 @@
               </template>
             </el-select>
           </el-form-item>
-
+            <div style="display: flex;height: 200px">
+              <div style="width: 40%;">
+                <el-form :model="form">
+                  <el-form-item prop="courseCover" label="课程封面">
+                    <el-upload
+                        action="/api/index/uploadImage"
+                        :on-success="handleUploadSuccess"
+                        :before-upload="beforeUpload"
+                        list-type="picture-card"
+                        :auto-upload="false"
+                        :show-file-list="false"
+                    >
+                      <i class="el-icon-plus"></i>
+                    </el-upload>
+                  </el-form-item>
+                </el-form>
+              </div>
+            </div>
           <el-form-item prop="onlineStatus" label="上线状态">
             <el-switch
                 style="display: block"
@@ -75,29 +92,41 @@ const form = reactive({
   teacherId: [],
   isOnline: false,
   onlineStatus: '',
+  courseCover: '',
 });
 
 const teacherList = ref([]);
 
 const insertUser = () => {
+  console.log(form)
   post(
-      '/insertCourse',
+      '/api/index/insertCourse',
       {
         courseName: form.courseName,
         courseDescription: form.courseDescription,
         coursePrice: form.coursePrice,
-        teacherId: form.teacherId,
+        teacherId: JSON.stringify(form.teacherId),
         onlineStatus: form.isOnline === false ? 0 : 1,
+        courseCover: form.courseCover,
       },
       (message) => {
-        router.push('/course');
+        router.push('/index/course');
         ElMessage.success(message);
       }
   );
 };
 
+const handleUploadSuccess = (response) => {
+  console.log("被触发了")
+  form.courseCover = response.filePath;
+};
+
+const beforeUpload = (file) => {
+  return true;
+};
+
 const getTeachers = () => {
-  get('/Teachers', (teachers) => {
+  get('/api/index/Teachers', (teachers) => {
     teacherList.value = teachers.map((teacher) => ({
       id: teacher.teacherId,
       name: teacher.name,

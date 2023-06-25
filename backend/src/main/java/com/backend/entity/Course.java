@@ -3,6 +3,8 @@ package com.backend.entity;
 
 import lombok.Data;
 
+import java.util.List;
+
 @Data
 public class Course {
 
@@ -10,7 +12,7 @@ public class Course {
   private String courseName;
   private String courseDescription;
   private double coursePrice;
-  private Teacher teacher;
+  private List<Teacher> teachers;
   private long onlineStatus;
 
 }
