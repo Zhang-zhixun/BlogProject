@@ -58,11 +58,6 @@
             <span>用户消息管理</span>
           </el-menu-item>
 
-          <el-menu-item index="16" @click="router.push('/index/userMessageView')">
-            <el-icon><Goods /></el-icon>
-            <span>用户消息</span>
-          </el-menu-item>
-
           <el-menu-item index="13" @click="router.push('/index/systemMessage')">
             <el-icon><Goods /></el-icon>
             <span>系统消息管理</span>

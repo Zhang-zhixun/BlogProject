@@ -51,13 +51,6 @@ public class CourseController {
         List<Course> list = courseService.findCourseByIsOnline(status);
         return RestBean.success(list);
     }
-
-//    @PostMapping("/uploadImage")
-//    RestBean<String> uploadImage(@RequestParam("file") MultipartFile file) {
-//        String fileName = file.getOriginalFilename();
-//        return "File uploaded successfully";
-//    }
-
     @PostMapping("/insertCourse")
     RestBean<String> insertCourse(@RequestParam("courseName") String courseName,
                                   @RequestParam("courseDescription") String courseDescription,
