@@ -24,7 +24,7 @@
       <el-table-column prop="templateContent" label="链接" align="center"/>
 
       <el-table-column prop="name" label="操作" v-slot="scope" align="center">
-        <el-button type="primary" @click="router.push({name:'main-chapter', params:{id : scope.row.templateId}})">
+        <el-button type="primary" @click="router.push({name:'main-certificateTemplateView', params:{id : scope.row.templateId}})">
           查看模板
         </el-button>
         <el-button type="primary" @click="router.push({name:'main-certificateTemplateEdit', params:{id : scope.row.templateId}})">
@@ -64,7 +64,6 @@ const getCertificateTemplateByName = () => {
 
 const getCertificateTemplateById = () => {
   get('/api/index/getCertificateTemplateById/'+ form.templateId, (message) => {
-    console.log(message);
     tableData.value = message;
   }, () => {
   })

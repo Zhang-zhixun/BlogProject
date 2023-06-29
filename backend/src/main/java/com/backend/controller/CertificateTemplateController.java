@@ -16,13 +16,13 @@ public class CertificateTemplateController {
     CertificateTemplateService certificateTemplateService;
 
     @GetMapping("/getCertificateTemplateById/{id}")
-    public CertificateTemplate findCertificateTemplateById(@PathVariable int id) {
-        return certificateTemplateService.findCertificateTemplateById(id);
+    public RestBean<CertificateTemplate> findCertificateTemplateById(@PathVariable int id) {
+        return RestBean.success(certificateTemplateService.findCertificateTemplateById(id));
     }
 
     @PostMapping("/getCertificateTemplateByName")
-    public List<CertificateTemplate> findCertificateTemplateByName(@RequestParam("name") String name) {
-        return certificateTemplateService.findCertificateTemplateByName(name);
+    public RestBean<List<CertificateTemplate>> findCertificateTemplateByName(@RequestParam("name") String name) {
+        return RestBean.success(certificateTemplateService.findCertificateTemplateByName(name));
     }
 
     @PostMapping("/insertCertificateTemplate")

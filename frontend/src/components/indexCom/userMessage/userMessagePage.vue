@@ -65,7 +65,6 @@ import {useStore} from "@/stores";
 import {ElMessage, ElMessageBox, ElInput, ElButton} from "element-plus";
 
 const store = useStore()
-console.log("+++++++++++++")
 const form = reactive({
   selectByMessageStatus: '',
   readText: '已读',

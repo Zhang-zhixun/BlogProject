@@ -43,7 +43,7 @@
             <span>分类管理</span>
           </el-menu-item>
 
-          <el-menu-item index="5" @click="router.push('/index/tag')">
+          <el-menu-item index="5" @click="router.push('/index/test')">
             <el-icon><Van /></el-icon>
             <span>标签管理</span>
           </el-menu-item>

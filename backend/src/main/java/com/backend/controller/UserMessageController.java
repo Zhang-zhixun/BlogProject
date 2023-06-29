@@ -17,44 +17,44 @@ public class UserMessageController {
     UserMessageService userMessageService;
 
     @GetMapping("/getAllUserMessageInASC")
-    public List<UserMessage> findAllUserMessageInASC() {
-        return userMessageService.findAllUserMessageInASC();
+    public RestBean<List<UserMessage>> findAllUserMessageInASC() {
+        return RestBean.success(userMessageService.findAllUserMessageInASC());
     }
 
     @GetMapping("/getAllUserMessageInDESC")
-    public List<UserMessage> findAllUserMessageInDESC() {
-        return userMessageService.findAllUserMessageInDESC();
+    public RestBean<List<UserMessage>> findAllUserMessageInDESC() {
+        return RestBean.success(userMessageService.findAllUserMessageInDESC());
     }
 
 
     @PostMapping("/getUserMessageBySenderName")
-    public List<UserMessage> findUserMessageBySenderName(@RequestParam("name") String name) {
-        return userMessageService.findUserMessageBySenderName(name);
+    public RestBean<List<UserMessage>> findUserMessageBySenderName(@RequestParam("name") String name) {
+        return RestBean.success(userMessageService.findUserMessageBySenderName(name));
     }
 
     @PostMapping("/getUserMessageByReceiverName")
-    public List<UserMessage> findUserMessageByReceiverName(@RequestParam("name") String name) {
-        return userMessageService.findUserMessageByReceiverName(name);
+    public RestBean<List<UserMessage>> findUserMessageByReceiverName(@RequestParam("name") String name) {
+        return RestBean.success(userMessageService.findUserMessageByReceiverName(name));
     }
 
     @PostMapping("/getUserMessageByContent")
-    public List<UserMessage> findUserMessageByContent(@RequestParam("content") String content) {
-        return userMessageService.findUserMessageByContent(content);
+    public RestBean<List<UserMessage>> findUserMessageByContent(@RequestParam("content") String content) {
+        return RestBean.success(userMessageService.findUserMessageByContent(content));
     }
 
     @PostMapping("/getUserMessageByDay")
-    public List<UserMessage> findUserMessageByDay(@RequestParam("day") String day) {
-        return userMessageService.findUserMessageByDay(day);
+    public RestBean<List<UserMessage>> findUserMessageByDay(@RequestParam("day") String day) {
+        return RestBean.success(userMessageService.findUserMessageByDay(day));
     }
 
     @GetMapping("/getUserMessageByMessageStatus/{info}")
-    public List<UserMessage> findUserMessageByMessageStatus(@PathVariable int info) {
-        return userMessageService.findUserMessageByMessageStatus(info);
+    public RestBean<List<UserMessage>> findUserMessageByMessageStatus(@PathVariable int info) {
+        return RestBean.success(userMessageService.findUserMessageByMessageStatus(info));
     }
 
     @GetMapping("/getUserMessageByMessageId/{id}")
-    public UserMessage findUserMessageByMessageId(@PathVariable int id) {
-        return userMessageService.findUserMessageByMessageId(id);
+    public RestBean<UserMessage> findUserMessageByMessageId(@PathVariable int id) {
+        return RestBean.success(userMessageService.findUserMessageByMessageId(id));
     }
 
     @GetMapping("/deleteUserMessageByMessageId/{id}")

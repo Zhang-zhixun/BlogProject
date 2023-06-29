@@ -4,56 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1d4363a4-6264-4afb-93f7-b6d6f14ed35d" name="更改" comment="增加了显示课程、添加课程、删除课程，以及一些mapper和service、controller的创建">
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/backend/controller/CertificateTemplateController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/backend/controller/CommentController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/backend/controller/SystemMessageController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/backend/controller/UserMessageController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/backend/controller/UserUserController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/backend/entity/PageResult.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/backend/mapper/CertificateTemplateMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/backend/mapper/SystemMessageMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/backend/mapper/UserAccountMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/backend/mapper/UserMessageMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/backend/mapper/UserUserMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/backend/service/CertificateTemplateService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/backend/service/CommentService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/backend/service/CommentServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/backend/service/SystemMessageService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/backend/service/UserAccountService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/backend/service/UserMessageService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/backend/service/UserUserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/backend/service/impl/CertificateTemplateServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/backend/service/impl/SystemMessageServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/backend/service/impl/UserAccountServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/backend/service/impl/UserMessageServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/backend/service/impl/UserUserServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/test/java/com/backend/mapper/UserMessageMapperTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/assets/img/certificateTemplate/certificateTemplate1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/components/indexCom/certificateTemplate/certificateTemplateEditPage.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/components/indexCom/certificateTemplate/certificateTemplateInsertPage.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/components/indexCom/certificateTemplate/certificateTemplatePage.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/components/indexCom/courseResource/courseResourceViewPage.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/components/indexCom/systemMessage/systemMessageInsertPage.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/components/indexCom/systemMessage/systemMessagePage.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/components/indexCom/userMessage/userMessagePage.vue" afterDir="false" />
+    <list default="true" id="1d4363a4-6264-4afb-93f7-b6d6f14ed35d" name="更改" comment="完成了其他模块的功能">
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/indexCom/certificateTemplate/certificateTemplateViewPage.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/backend/entity/UserAccount.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/backend/entity/UserAccount.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/backend/mapper/CommentMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/backend/mapper/CommentMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/backend/controller/CertificateTemplateController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/backend/controller/CertificateTemplateController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/backend/controller/UserMessageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/backend/controller/UserMessageController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/components.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/indexCom/chapter/chapterEditPage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/indexCom/chapter/chapterEditPage.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/indexCom/chapter/chapterInsertPage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/indexCom/chapter/chapterInsertPage.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/indexCom/chapter/chapterPage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/indexCom/chapter/chapterPage.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/indexCom/comment/commentPage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/indexCom/comment/commentPage.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/indexCom/course/courseEditPage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/indexCom/course/courseEditPage.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/indexCom/course/courseInsertPage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/indexCom/course/courseInsertPage.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/indexCom/courseResource/courseResourceEditPage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/indexCom/courseResource/courseResourceEditPage.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/indexCom/courseResource/courseResourceInsertPage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/indexCom/courseResource/courseResourceInsertPage.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/indexCom/courseResource/courseResourcePage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/indexCom/courseResource/courseResourcePage.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/indexCom/certificateTemplate/certificateTemplatePage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/indexCom/certificateTemplate/certificateTemplatePage.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/components/indexCom/index/Menu.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/indexCom/index/Menu.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/indexCom/index/headerPage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/indexCom/index/headerPage.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/indexCom/user/userEditPage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/indexCom/user/userEditPage.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/indexCom/user/userPage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/indexCom/user/userPage.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/indexCom/userMessage/userMessagePage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/indexCom/userMessage/userMessagePage.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/router/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -64,10 +23,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Vue Single File Component" />
         <option value="JUnit5 Test Class" />
         <option value="Interface" />
         <option value="Class" />
+        <option value="Vue Single File Component" />
       </list>
     </option>
   </component>
@@ -107,7 +66,7 @@
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
     "jdk.selected.JAVA_MODULE": "17",
-    "last_opened_file_path": "C:/Users/Jeason黄/Desktop/Springboot/BlogProject-master/frontend/src/components/indexCom/courseResource",
+    "last_opened_file_path": "C:/Users/Jeason黄/Desktop/Springboot/BlogProject-master/frontend/src/components/indexCom/certificateTemplate",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -129,8 +88,8 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Jeason黄\Desktop\Springboot\BlogProject-master\frontend\src\components\indexCom\courseResource" />
       <recent name="C:\Users\Jeason黄\Desktop\Springboot\BlogProject-master\frontend\src\components\indexCom\certificateTemplate" />
+      <recent name="C:\Users\Jeason黄\Desktop\Springboot\BlogProject-master\frontend\src\components\indexCom\courseResource" />
       <recent name="C:\Users\Jeason黄\Desktop\Springboot\BlogProject-master\frontend\src\assets\img\certificateTemplate" />
       <recent name="C:\Users\Jeason黄\Desktop\Springboot\BlogProject-master\frontend\src\components\indexCom\userMessage" />
       <recent name="C:\Users\Jeason黄\Desktop\Springboot\BlogProject-master\frontend\src\components\indexCom\systemMessage" />
@@ -243,7 +202,7 @@
       <workItem from="1687794987504" duration="5266000" />
       <workItem from="1687825246545" duration="18765000" />
       <workItem from="1687850917235" duration="1620000" />
-      <workItem from="1687962525125" duration="10535000" />
+      <workItem from="1687962525125" duration="15222000" />
     </task>
     <task id="LOCAL-00001" summary="博客后端系统初始化框架功能包含：注册，登录，首页，忘记密码">
       <created>1686824454400</created>
@@ -294,7 +253,14 @@
       <option name="project" value="LOCAL" />
       <updated>1687675808171</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="完成了其他模块的功能">
+      <created>1688003683984</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1688003683984</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -315,6 +281,7 @@
     <MESSAGE value="博客后端系统初始化框架功能包含：注册，登录，首页，忘记密码" />
     <MESSAGE value="添加了数据库实体" />
     <MESSAGE value="增加了显示课程、添加课程、删除课程，以及一些mapper和service、controller的创建" />
-    <option name="LAST_COMMIT_MESSAGE" value="增加了显示课程、添加课程、删除课程，以及一些mapper和service、controller的创建" />
+    <MESSAGE value="完成了其他模块的功能" />
+    <option name="LAST_COMMIT_MESSAGE" value="完成了其他模块的功能" />
   </component>
 </project>

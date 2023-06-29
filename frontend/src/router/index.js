@@ -128,6 +128,14 @@ const router = createRouter({
                     }
                 },
                 {
+                    path: 'tag',
+                    name: 'main-tag',
+                    component: () => import('@/components/indexCom/tag/tagPage.vue'),
+                    meta: {
+                        title : '标签管理'
+                    }
+                },
+                {
                     path: 'classify',
                     name: 'main-classify',
                     component: () => import('@/components/indexCom/classify/classifyPage.vue'),
@@ -204,6 +212,14 @@ const router = createRouter({
                     component: () => import('@/components/indexCom/certificateTemplate/certificateTemplateEditPage.vue'),
                     meta: {
                         title : '模板编辑'
+                    }
+                },
+                {
+                    path: 'certificateTemplateView/:id',
+                    name: 'main-certificateTemplateView',
+                    component: () => import('@/components/indexCom/certificateTemplate/certificateTemplateViewPage.vue'),
+                    meta: {
+                        title : '模板查看'
                     }
                 },
                 {
