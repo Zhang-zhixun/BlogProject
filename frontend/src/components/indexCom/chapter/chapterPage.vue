@@ -5,6 +5,7 @@
       <div class="card-header">
         <div>
           <el-button @click="router.push('/index/chapterInsert/' + route.params.id)" type="primary" size="large">添加章节</el-button>
+          <el-button style="float: right" @click="goBack" type="primary">返回</el-button>
         </div>
 <!--        <div>-->
 <!--          <label>课程名称：</label>-->
@@ -68,6 +69,9 @@ const route = useRoute()
 const tableData = ref([])
 
 
+const goBack = () => {
+  router.go(-1);
+}
 
 const getChapterByCourseId = () => {
   get('/api/index/getChapterByCourseId/' + route.params.id, (message) => {

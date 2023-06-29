@@ -8,6 +8,7 @@
           查看章节资源
         </el-button>
         <el-button class="button" @click="updateChapter()" size="large" type="primary">确认并修改</el-button>
+        <el-button style="float: right" @click="goBack" type="primary">返回</el-button>
       </div>
     </template>
 
@@ -66,6 +67,10 @@ const form = reactive({
   chapterTitle: '',
   sortOrder: '',
 })
+
+const goBack = () => {
+  router.go(-1);
+}
 
 get('/api/index/getChapterByChapterId/' + route.params.id, (message) => {
   console.log(message)

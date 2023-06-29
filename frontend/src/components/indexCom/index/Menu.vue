@@ -53,9 +53,24 @@
             <span>评论管理</span>
           </el-menu-item>
 
+          <el-menu-item index="12" @click="router.push('/index/userMessage')">
+            <el-icon><Goods /></el-icon>
+            <span>用户消息管理</span>
+          </el-menu-item>
+
+          <el-menu-item index="13" @click="router.push('/index/systemMessage')">
+            <el-icon><Goods /></el-icon>
+            <span>系统消息管理</span>
+          </el-menu-item>
+
           <el-menu-item index="7" @click="router.push('/index/user')">
             <el-icon><Money /></el-icon>
             <span>用户管理</span>
+          </el-menu-item>
+
+          <el-menu-item index="14" @click="router.push('/index/certificateTemplate')">
+            <el-icon><Goods /></el-icon>
+            <span>模板管理</span>
           </el-menu-item>
 
           <el-menu-item index="8" @click="router.push('/index/resources')">

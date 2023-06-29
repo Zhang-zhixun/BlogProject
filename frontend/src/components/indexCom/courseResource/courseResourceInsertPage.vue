@@ -4,6 +4,7 @@
       <div class="card-header">
         <span style="font-weight: bold">添加课程资源</span>
         <el-button class="button" @click="insertCourseResource()" size="large" type="primary">确认并添加</el-button>
+        <el-button style="float: right" @click="$router.go(-1)" type="primary">返回</el-button>
       </div>
       <div>
         <h1>{{form.chapterTitle}}</h1>

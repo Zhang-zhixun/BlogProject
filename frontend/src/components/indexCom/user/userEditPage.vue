@@ -3,7 +3,9 @@
 
     <template #header>
       <div class="card-header">
-        <span style="font-weight: bold">修改用户信息</span>
+        <span style="font-weight: bold">修改用户21212信息:{{ route.params.id }}</span>
+
+
         <el-button class="button" @click="updateUser()" size="large" type="primary">确认并修改</el-button>
       </div>
     </template>
@@ -18,44 +20,51 @@
         >
 
           <el-form-item prop="caid" label="用户账号" style="margin-top: 0px">
-            <el-input v-model="form.caid" size="large" type="text" disabled placeholder="用户账号" >
-
-            </el-input>
+            <el-input v-model="form.userId" size="large" type="text" disabled placeholder="用户账号"></el-input>
           </el-form-item>
 
-          <el-form-item prop="ctname" label="用户姓名">
-            <el-input v-model="form.ctname" size="large" type="text" placeholder="用户姓名">
-
-            </el-input>
+          <el-form-item label="用户姓名">
+            <el-input v-model="form.name" size="large" type="text" placeholder="用户姓名"></el-input>
           </el-form-item>
 
-          <el-form-item prop="ctIdCard" label="身份证号">
-            <el-input v-model="form.ctIdCard" size="large" type="text" placeholder="身份证号码">
-
-            </el-input>
+          <el-form-item label="用户性别">
+            <el-radio v-model="form.gender" label="男">男</el-radio>
+            <el-radio v-model="form.gender" label="女">女</el-radio>
           </el-form-item>
 
-          <el-form-item prop="ctphone" label="手机号码">
-            <el-input v-model="form.ctphone" size="large" type="number" placeholder="手机号码">
 
-            </el-input>
+          <el-form-item label="用户年龄">
+            <el-input v-model="form.age" size="large" type="text" placeholder="用户姓名"></el-input>
           </el-form-item>
 
-          <el-form-item prop="ctAddress" label="居住地址">
-            <el-input v-model="form.ctAddress" size="large" type="text" placeholder="居住地址">
-
-            </el-input>
+          <el-form-item label="所在学校">
+            <el-input v-model="form.school" size="large" type="text" placeholder="用户姓名"></el-input>
           </el-form-item>
 
-          <el-form-item prop="miCard" label="社保卡">
-            <el-input disabled v-model="form.miCard" size="large" type="text" placeholder="社保卡">
-
-            </el-input>
+          <el-form-item label="用户邮箱">
+            <el-input v-model="form.email" size="large" type="text" placeholder="用户姓名"></el-input>
           </el-form-item>
 
+
+          <el-form-item label="用户角色">
+
+            <el-select v-model="form.identity" placeholder="请选择">
+              <el-option
+                  v-for="item in options"
+                  :key="item.value"
+                  :label="item.label"
+                  :value="item.value">
+              </el-option>
+            </el-select>
+          </el-form-item>
+
+          <el-form-item label="帐户名">
+            <el-input v-model="form.userAccountUsername" size="large" type="text" placeholder="用户姓名"></el-input>
+          </el-form-item>
 
         </el-form>
       </div>
+
       <div style="flex: 1;padding:0 10px">
         <el-image style="width: 100%;height: 100%"
                   src="https://ts1.cn.mm.bing.net/th/id/R-C.60361064d8eee12aa647695bf666bb38?rik=W663M7lXL03Y9A&riu=http%3a%2f%2fimg.mm4000.com%2ffile%2fe%2fe3%2f395f367325.jpg&ehk=mVwYGg59wm0g3RzSDpFZgv6EYwrdQQKlvIAtvNQsVTE%3d&risl=&pid=ImgRaw&r=0"/>
@@ -72,32 +81,90 @@ import {ElMessage} from "element-plus";
 import {useRoute} from "vue-router";
 
 const form = reactive({
-  caid: '',
-  ctAddress: '',
-  ctid: '',
-  ctname: '',
-  ctphone: '',
-  ctIdCard: '',
-  miCard: '',
+  userId: 0,
+  name: '',
+  gender: '',
+  age: 0,
+  school: '',
+  identity: '',
+  userAccount: '',
+  userAccountUsername: '',
+  password: ''
 })
+
+const options = reactive([
+      {
+        value: '学生',
+        label: '学生'
+      },
+      {
+        value: '教师',
+        label: '教师'
+      },
+    ]
+)
+
+const value =ref("")
 
 const route = useRoute()
 
-
 const tableData = ref([])
+const spathssss = reactive(1)
 
 //获取订单信息
-get('/api/index/findCustomersByCtId/' + route.params.id, (message) => {
+get('/user/findByOneUser/' + route.params.id, (message) => {
+
+  console.log("message ==>")
   console.log(message)
-  form.caid = message.customersAccount.caId
-  form.ctAddress = message.ctAddress
-  form.ctname = message.ctName
-  form.ctphone = message.ctPhone
-  form.ctid = message.ctId
-  form.ctIdCard = message.ctIdCard
-  form.miCard = message.medicalInsurance.miCard
+
+  console.log("进入用户信息修改界面   userEditPage.vue ==>")
+
+  form.userId = message.userId
+  form.name = message.name
+  form.gender = message.gender
+  form.age = message.age
+  form.school = message.school
+  form.email = message.email
+  form.identity = message.identity
+  form.userAccount = message.userAccount
+  form.password = message.userAccount.password
+  form.userAccountUsername= message.userAccount.userAccountUsername
+
+  console.log("form ==>")
   console.log(form)
 })
+const UserAccountData = reactive({
+  userAccountUsername: "",
+})
+
+
+/*
+get('/UserAccount/getAllUserAccount', (message) => {
+
+  console.log("message ==>")
+  console.log(message)
+  console.log("/UserAccount/getAllUserAccount/  userEditPage.vue ==>")
+
+  console.log("message.list ==>")
+  console.log(message.list)
+  UserAccountData.userAccountUsername = message.list
+
+  console.log("UserAccountData.list ==>")
+  console.log(UserAccountData)
+
+
+
+
+
+})
+
+*/
+
+
+
+
+
+
 
 
 //验证手机号码格式
@@ -183,22 +250,28 @@ const rules = {
 const formRef = ref()
 const updateUser = () => {
   formRef.value.validate((isVaild => {
-    if (isVaild) {
-      console.log(form)
-      post('/api/index/updateCustomers', {
-        caid: form.caid,
-        ctAddress: form.ctAddress,
-        ctId: form.ctid,
-        ctName: form.ctname,
-        ctPhone: form.ctphone,
-        ctIdCard: form.ctIdCard,
-      }, (message) => {
-        router.push('/index/user')
-        ElMessage.success(message)
-      })
-    } else {
-      ElMessage.warning('请完整填写用户信息内容')
-    }
+    console.log("点击了按钮，开始提交数据   updateUser ==>")
+    /*    if (isVaild) {*/
+    console.log(form)
+    post('/user/UpdateUserOneByUserId', {
+
+
+      userId: form.userId,
+      name: form.name,
+      gender: form.gender,
+      age: form.age,
+      school: form.school,
+      email: form.email,
+      identity: form.identity,
+      password: form.password,
+      userAccountUsername: form.userAccountUsername,
+
+    }, (message) => {
+      console.log("  ==========        (message)   ==========")
+      router.push('/index/user')
+      ElMessage.success(message)
+    })
+
   }))
 }
 </script>

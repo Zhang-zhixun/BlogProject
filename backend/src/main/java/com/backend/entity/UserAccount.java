@@ -7,7 +7,6 @@ public class UserAccount {
 
   private String userAccountUsername;
   private String password;
-
-
+  private String email;
 
 }

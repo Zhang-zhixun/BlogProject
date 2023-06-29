@@ -120,6 +120,14 @@ const router = createRouter({
                     }
                 },
                 {
+                    path: 'courseResourceView/:id',
+                    name: 'main-courseResourceView',
+                    component: () => import('@/components/indexCom/courseResource/courseResourceViewPage.vue'),
+                    meta: {
+                        title : '课程资源查看'
+                    }
+                },
+                {
                     path: 'classify',
                     name: 'main-classify',
                     component: () => import('@/components/indexCom/classify/classifyPage.vue'),
@@ -144,10 +152,58 @@ const router = createRouter({
                     }
                 },
                 {
+                    path: 'userMessage',
+                    name: 'main-userMessage',
+                    component: () => import('@/components/indexCom/userMessage/userMessagePage.vue'),
+                    meta: {
+                        title : '用户消息管理'
+                    }
+                },
+                {
+                    path: 'systemMessage',
+                    name: 'main-systemMessage',
+                    component: () => import('@/components/indexCom/systemMessage/systemMessagePage.vue'),
+                    meta: {
+                        title : '系统消息管理'
+                    }
+                },
+                {
+                    path: 'systemMessageInsert',
+                    name: 'main-systemMessageInsert',
+                    component: () => import('@/components/indexCom/systemMessage/systemMessageInsertPage.vue'),
+                    meta: {
+                        title : '系统消息添加'
+                    }
+                },
+                {
                     path: 'user',
                     name: 'main-user',
                     component: () => import('@/components/indexCom/user/userPage.vue'),meta: {
                         title : '用户管理'
+                    }
+                },
+                {
+                    path: 'certificateTemplate',
+                    name: 'main-certificateTemplate',
+                    component: () => import('@/components/indexCom/certificateTemplate/certificateTemplatePage.vue'),
+                    meta: {
+                        title : '模板管理'
+                    }
+                },
+                {
+                    path: 'certificateTemplateInsert',
+                    name: 'main-certificateTemplateInsert',
+                    component: () => import('@/components/indexCom/certificateTemplate/certificateTemplateInsertPage.vue'),
+                    meta: {
+                        title : '模板添加'
+                    }
+                },
+                {
+                    path: 'certificateTemplateEdit/:id',
+                    name: 'main-certificateTemplateEdit',
+                    component: () => import('@/components/indexCom/certificateTemplate/certificateTemplateEditPage.vue'),
+                    meta: {
+                        title : '模板编辑'
                     }
                 },
                 {

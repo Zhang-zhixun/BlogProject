@@ -5,6 +5,7 @@
       <div class="card-header">
         <span style="font-weight: bold">修改课程信息</span>
         <el-button class="button" @click="updateCourse()" size="large" type="primary">确认并修改</el-button>
+        <el-button style="float: right" @click="$router.go(-1)" type="primary">返回</el-button>
       </div>
     </template>
 

@@ -4,6 +4,7 @@
       <div class="card-header">
         <span style="font-weight: bold">添加章节</span>
         <el-button class="button" @click="insertUser()" size="large" type="primary">确认并添加</el-button>
+        <el-button style="float: right" @click="goBack" type="primary">返回</el-button>
       </div>
     </template>
 
@@ -68,6 +69,10 @@ const getCourse = () => {
       form.courseName = message.courseName;
   });
 };
+
+const goBack = () => {
+  router.go(-1);
+}
 
 onMounted(() => {
   getCourse();

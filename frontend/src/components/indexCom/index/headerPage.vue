@@ -36,7 +36,7 @@
 </template>
 
 <script setup >
-import {Expand, Fold} from "@element-plus/icons-vue";
+import {Expand, Fold, Plus} from "@element-plus/icons-vue";
 import {ref, watch} from "vue";
 import {useStore} from "@/stores";
 import {isCollapse} from './isCollapse.ts'
@@ -45,7 +45,6 @@ import { computed } from 'vue'
 import router from "@/router";
 import {get} from "@/net";
 import {ElMessage} from "element-plus";
-
 
 const route = useRoute()
 let list = computed(() => {

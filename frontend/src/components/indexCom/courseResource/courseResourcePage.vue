@@ -7,6 +7,7 @@
           <el-button @click="router.push('/index/courseResourceInsert/' + route.params.id)" type="primary" size="large">
             添加资源
           </el-button>
+          <el-button style="float: right" @click="$router.go(-1)" type="primary">返回</el-button>
         </div>
         <div>
           <h1>{{ form.chapterTitle }}</h1>
@@ -29,7 +30,7 @@
       <el-table-column prop="sortOrder" label="排序号" align="center"/>
       <el-table-column prop="name" label="操作" v-slot="scope" align="center">
         <el-button type="primary"
-                   @click="router.push({name:'main-courseResource', params:{id : scope.row.resourceId}})">
+                   @click="router.push({name:'main-courseResourceView', params:{id : scope.row.resourceId}})">
           查看
         </el-button>
         <el-button type="primary"
@@ -67,7 +68,6 @@ const form = reactive({
 });
 const route = useRoute()
 const tableData = ref([])
-
 const getCourseResourceByChapterId = () => {
   get('/api/index/getCourseResourceByChapterId/' + route.params.id, (message) => {
     tableData.value = message;
@@ -87,6 +87,9 @@ const getCourseResourceByChapterId = () => {
 const getCourseResourceByResourceType = () =>{
   post('/api/index/getCourseResourceByResourceType', {type:form.selectByResourceType,id:form.chapterId}, (message) => {
     tableData.value = message;
+    tableData.value.forEach((item) => {
+      item.resourceType = item.resourceType === 'video' ? '视频' : '图文'; // 1表示上线，0表示下线
+    });
   })
 }
 
