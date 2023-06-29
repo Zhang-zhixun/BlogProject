@@ -58,6 +58,11 @@
             <span>用户消息管理</span>
           </el-menu-item>
 
+          <el-menu-item index="16" @click="router.push('/index/userMessageView')">
+            <el-icon><Goods /></el-icon>
+            <span>用户消息</span>
+          </el-menu-item>
+
           <el-menu-item index="13" @click="router.push('/index/systemMessage')">
             <el-icon><Goods /></el-icon>
             <span>系统消息管理</span>
@@ -71,6 +76,11 @@
           <el-menu-item index="14" @click="router.push('/index/certificateTemplate')">
             <el-icon><Goods /></el-icon>
             <span>模板管理</span>
+          </el-menu-item>
+
+          <el-menu-item index="15" @click="router.push('/index/paymentChannel')">
+            <el-icon><Goods /></el-icon>
+            <span>支付渠道管理</span>
           </el-menu-item>
 
           <el-menu-item index="8" @click="router.push('/index/resources')">

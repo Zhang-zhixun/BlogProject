@@ -68,4 +68,9 @@ public class UserMessageServiceImpl implements UserMessageService {
     public boolean deleteUserMessageByReceiverId(int id) {
         return userMessageMapper.deleteUserMessageByReceiverId(id);
     }
+
+    @Override
+    public List<UserMessage> findUserMessageBySenderIdOrReceiverId(int id) {
+        return userMessageMapper.findUserMessageBySenderIdOrReceiverId(id);
+    }
 }

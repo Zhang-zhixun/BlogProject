@@ -223,6 +223,30 @@ const router = createRouter({
                     }
                 },
                 {
+                    path: 'paymentChannel',
+                    name: 'main-paymentChannel',
+                    component: () => import('@/components/indexCom/PaymentChannel/paymentChannelPage.vue'),
+                    meta: {
+                        title : '支付渠道管理'
+                    }
+                },
+                {
+                    path: 'paymentChannelInsert',
+                    name: 'main-paymentChannelInsert',
+                    component: () => import('@/components/indexCom/PaymentChannel/paymentChannelInsertPage.vue'),
+                    meta: {
+                        title : '支付渠道添加'
+                    }
+                },
+                {
+                    path: 'paymentChannelEdit/:id',
+                    name: 'main-paymentChannelEdit',
+                    component: () => import('@/components/indexCom/PaymentChannel/paymentChannelEditPage.vue'),
+                    meta: {
+                        title : '支付渠道编辑'
+                    }
+                },
+                {
                     path: 'resources',
                     name: 'main-resources',
                     component: () => import('@/components/indexCom/resources/resourcesPage.vue'),

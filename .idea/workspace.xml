@@ -5,14 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1d4363a4-6264-4afb-93f7-b6d6f14ed35d" name="更改" comment="完成了其他模块的功能">
-      <change afterPath="$PROJECT_DIR$/frontend/src/components/indexCom/certificateTemplate/certificateTemplateViewPage.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/backend/controller/PaymentChannelController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/backend/mapper/PaymentChannelMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/backend/service/PaymentChannelService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/backend/service/impl/PaymentChannelServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/indexCom/PaymentChannel/paymentChannelEditPage.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/indexCom/PaymentChannel/paymentChannelInsertPage.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/indexCom/PaymentChannel/paymentChannelPage.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/backend/controller/CertificateTemplateController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/backend/controller/CertificateTemplateController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/backend/controller/UserMessageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/backend/controller/UserMessageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/backend/mapper/UserMessageMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/backend/mapper/UserMessageMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/backend/service/UserMessageService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/backend/service/UserMessageService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/backend/service/impl/UserMessageServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/backend/service/impl/UserMessageServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/components.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/indexCom/certificateTemplate/certificateTemplatePage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/indexCom/certificateTemplate/certificateTemplatePage.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/components/indexCom/index/Menu.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/indexCom/index/Menu.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/indexCom/userMessage/userMessagePage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/indexCom/userMessage/userMessagePage.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/router/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -66,7 +72,7 @@
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
     "jdk.selected.JAVA_MODULE": "17",
-    "last_opened_file_path": "C:/Users/Jeason黄/Desktop/Springboot/BlogProject-master/frontend/src/components/indexCom/certificateTemplate",
+    "last_opened_file_path": "C:/Users/Jeason黄/Desktop/Springboot/BlogProject-master/frontend/src/components/indexCom/PaymentChannel",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -88,11 +94,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Jeason黄\Desktop\Springboot\BlogProject-master\frontend\src\components\indexCom\PaymentChannel" />
       <recent name="C:\Users\Jeason黄\Desktop\Springboot\BlogProject-master\frontend\src\components\indexCom\certificateTemplate" />
       <recent name="C:\Users\Jeason黄\Desktop\Springboot\BlogProject-master\frontend\src\components\indexCom\courseResource" />
       <recent name="C:\Users\Jeason黄\Desktop\Springboot\BlogProject-master\frontend\src\assets\img\certificateTemplate" />
       <recent name="C:\Users\Jeason黄\Desktop\Springboot\BlogProject-master\frontend\src\components\indexCom\userMessage" />
-      <recent name="C:\Users\Jeason黄\Desktop\Springboot\BlogProject-master\frontend\src\components\indexCom\systemMessage" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Jeason黄\Desktop\Springboot\BlogProject-master\mysql" />
@@ -104,9 +110,11 @@
       <recent name="com.backend.mapper" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.backend.controller" />
+      <recent name="com.backend.service.impl" />
+      <recent name="com.backend.service" />
       <recent name="com.backend.mapper" />
       <recent name="com.backend.config" />
-      <recent name="com.backend.entity" />
     </key>
   </component>
   <component name="RunAnythingCache">
@@ -203,6 +211,7 @@
       <workItem from="1687825246545" duration="18765000" />
       <workItem from="1687850917235" duration="1620000" />
       <workItem from="1687962525125" duration="15222000" />
+      <workItem from="1688021199842" duration="10919000" />
     </task>
     <task id="LOCAL-00001" summary="博客后端系统初始化框架功能包含：注册，登录，首页，忘记密码">
       <created>1686824454400</created>

@@ -83,4 +83,10 @@ public class UserMessageController {
             return RestBean.failure(404,"删除失败！");
         }
     }
+
+    @GetMapping("/getUserMessageBySenderIdOrReceiverId/{id}")
+    public RestBean<List<UserMessage>> findUserMessageBySenderIdOrReceiverId(@PathVariable int id) {
+        return RestBean.success(userMessageService.findUserMessageBySenderIdOrReceiverId(id));
+    }
+
 }

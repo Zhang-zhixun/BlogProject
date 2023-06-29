@@ -27,7 +27,7 @@ public interface UserMessageService {
 
     boolean deleteUserMessageByReceiverId(int id);
 
-
+    List<UserMessage> findUserMessageBySenderIdOrReceiverId(int id);
 
 
 }

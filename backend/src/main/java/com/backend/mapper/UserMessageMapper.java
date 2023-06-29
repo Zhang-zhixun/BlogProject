@@ -109,5 +109,18 @@ public interface UserMessageMapper {
 
     @Delete("delete from blog.user_message where receiver_id = #{id}")
     boolean deleteUserMessageByReceiverId(int id);
-
+    @Select("""
+            select * from user_message where
+            sender_id = 1 or receiver_id = 1
+            order by send_time desc
+            """)
+    @Results({
+            @Result(property = "messageId", column = "message_id"),
+            @Result(property = "sender", column = "sender_id", one = @One(select = "com.backend.mapper.UserUserMapper.SelectOnefindByUserId")),
+            @Result(property = "receiver", column = "receiver_id", one = @One(select = "com.backend.mapper.UserUserMapper.SelectOnefindByUserId")),
+            @Result(property = "content", column = "content"),
+            @Result(property = "messageStatus", column = "message_status"),
+            @Result(property = "sendTime", column = "send_time"),
+    })
+    List<UserMessage> findUserMessageBySenderIdOrReceiverId(int id);
 }
