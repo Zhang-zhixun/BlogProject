@@ -1,6 +1,7 @@
 package com.backend.controller;
 
 
+import com.backend.entity.auth.AdminAccount;
 import com.backend.entity.tools.RestBean;
 import com.backend.entity.auth.Admin;
 import com.backend.entity.user.AccountUser;
@@ -20,9 +21,10 @@ public class UserController {
 
 
     @GetMapping("/me")
-    public RestBean<AccountUser> me(@SessionAttribute("account") AccountUser user){
+    public RestBean<AdminAccount> me(@SessionAttribute("account") AdminAccount adminAccount){
+        System.out.println("登录用户："+adminAccount);
         System.out.println(RestBean.success());
-        return RestBean.success(user);
+        return RestBean.success(adminAccount);
     }
 
     @GetMapping("/findAllAccount")

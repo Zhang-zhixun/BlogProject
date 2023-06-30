@@ -6,7 +6,10 @@ import java.util.List;
 
 public interface CourseService {
     List<Course> findAllCourse();
+    List<Course> findAllCourseByUsername(String username);
     Course findCourseById(int id);
+    List<Course> findCourseByUName(String name,String uName);
+    List<Course> findCourseByUIsOnline(int status, String uname);
     List<Course> findCourseByName(String name);
     List<Course> findCourseByTName(String name);
     List<Course> findCourseByIsOnline(int status);

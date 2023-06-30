@@ -6,7 +6,7 @@
         <div>
           <el-button @click="router.push('/index/courseInsert')" type="primary" size="large">添加课程</el-button>
         </div>
-        <div>
+        <div v-if="!(store.auth.user.adminUsername === 'zzx')">
           <label>课程名称：</label>
           <el-input v-model="form.courseName" type="text" style="width: 100px;" placeholder="输入名称"/>
           <el-button style="width: 50px;" @click="getCourseByCourseName">搜索</el-button>
@@ -20,6 +20,18 @@
             <el-option :label="form.all" @click="getCourseByCourseName"></el-option>
             <el-option :label="form.goLive" :key="1" :value="1" @click="getCourseByIsOnline"></el-option>
             <el-option :label="form.noLive" :key="0" :value="0" @click="getCourseByIsOnline"></el-option>
+          </el-select>
+        </div>
+        <div v-if="store.auth.user.adminUsername === 'zzx'">
+          <label>课程名称：</label>
+          <el-input v-model="form.courseName" type="text" style="width: 100px;" placeholder="输入名称"/>
+          <el-button style="width: 50px;" @click="getCourseByUCourseName">搜索</el-button>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <label>是否上线：</label>
+          <el-select v-model="form.selectByOnline" placeholder="选择" style="width: 100px;">
+            <el-option :label="form.all" @click="getCourseByUCourseName"></el-option>
+            <el-option :label="form.goLive" :key="1" :value="1" @click="getCourseByUIsOnline"></el-option>
+            <el-option :label="form.noLive" :key="0" :value="0" @click="getCourseByUIsOnline"></el-option>
           </el-select>
         </div>
       </div>
@@ -86,39 +98,66 @@ const form = reactive({
 
 const tableData = ref([])
 
-const getCourseByIsOnline = () => {
-  get('/api/index/CourseByStatus/' + form.selectByOnline, (message) => {
-    tableData.value = message;
-    tableData.value.forEach((item) => {
-      item.onlineStatus = item.onlineStatus === 1; // 1表示上线，0表示下线
-    });
-  }, () => {
-    store.auth.user = null
-  })
-}
+  const getCourseByUIsOnline = () => {
+    post('/api/index/CourseByUStatus', {status: form.selectByOnline,uname: store.auth.user.adminUsername}, (message) => {
+      console.log(message)
+      tableData.value = message;
+      tableData.value.forEach((item) => {
+        item.onlineStatus = item.onlineStatus === 1; // 1表示上线，0表示下线
+      });
+    }, () => {
+      store.auth.user = null
+    })
+  }
 
-const getCourseByCourseName = () => {
-  post('/api/index/getCourseByCourseName', {name: form.courseName}, (message) => {
-    tableData.value = message;
-    tableData.value.forEach((item) => {
-      item.onlineStatus = item.onlineStatus === 1; // 1表示上线，0表示下线
-    });
-  }, () => {
-    store.auth.user = null
-  })
-}
+  const getCourseByUCourseName = () => {
+    post('/api/index/getCourseByUName', {name: form.courseName,uname: store.auth.user.adminUsername}, (message) => {
+      tableData.value = message;
+      tableData.value.forEach((item) => {
+        item.onlineStatus = item.onlineStatus === 1; // 1表示上线，0表示下线
+      });
+    }, () => {
+      store.auth.user = null
+    })
+  }
 
-const getCourseByTeacherName = () => {
-  post('/api/index/getCourseByTeacherName', {name: form.teacherName}, (message) => {
-    tableData.value = message;
-    tableData.value.forEach((item) => {
-      item.onlineStatus = item.onlineStatus === 1; // 1表示上线，0表示下线
-    });
-  }, () => {
-    store.auth.user = null
-  })
-}
-getCourseByCourseName()
+  const getCourseByIsOnline = () => {
+    get('/api/index/CourseByStatus/' + form.selectByOnline, (message) => {
+      tableData.value = message;
+      tableData.value.forEach((item) => {
+        item.onlineStatus = item.onlineStatus === 1; // 1表示上线，0表示下线
+      });
+    }, () => {
+      store.auth.user = null
+    })
+  }
+
+  const getCourseByCourseName = () => {
+    post('/api/index/getCourseByCourseName', {name: form.courseName}, (message) => {
+      tableData.value = message;
+      tableData.value.forEach((item) => {
+        item.onlineStatus = item.onlineStatus === 1; // 1表示上线，0表示下线
+      });
+    }, () => {
+      store.auth.user = null
+    })
+  }
+
+  const getCourseByTeacherName = () => {
+    post('/api/index/getCourseByTeacherName', {name: form.teacherName}, (message) => {
+      tableData.value = message;
+      tableData.value.forEach((item) => {
+        item.onlineStatus = item.onlineStatus === 1; // 1表示上线，0表示下线
+      });
+    }, () => {
+      store.auth.user = null
+    })
+  }
+  if(store.auth.user.adminUsername === 'zzx'){
+    getCourseByUCourseName();
+  }else{
+    getCourseByCourseName();
+  }
 
 let s = false
 

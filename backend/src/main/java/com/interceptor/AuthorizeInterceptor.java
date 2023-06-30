@@ -1,6 +1,7 @@
 package com.interceptor;
 
 
+import com.backend.entity.auth.AdminAccount;
 import com.backend.entity.user.AccountUser;
 import com.backend.mapper.UserMapper;
 import jakarta.annotation.Resource;
@@ -34,7 +35,7 @@ public class AuthorizeInterceptor implements HandlerInterceptor {
         User user = (User) authentication.getPrincipal();
         String username = user.getUsername();
         //判断account是否存在
-        AccountUser account = mapper.findByAccountUsernameOrEmail(username);
+        AdminAccount account = mapper.findByUsernameOrEmail(username);
         if(account!=null){
             request.getSession().setAttribute("account",account);
         }

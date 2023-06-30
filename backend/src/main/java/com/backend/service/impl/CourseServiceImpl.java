@@ -20,8 +20,23 @@ public class CourseServiceImpl implements CourseService {
     }
 
     @Override
+    public List<Course> findAllCourseByUsername(String username) {
+        return courseMapper.findAllCourseByUsername(username);
+    }
+
+    @Override
     public Course findCourseById(int id) {
         return courseMapper.findCourseById(id);
+    }
+
+    @Override
+    public List<Course> findCourseByUName(String name, String uName) {
+        return courseMapper.findCourseByUName(name,uName);
+    }
+
+    @Override
+    public List<Course> findCourseByUIsOnline(int status, String uname) {
+        return courseMapper.findCourseByUIsOnline(status,uname);
     }
 
     @Override

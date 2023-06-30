@@ -24,7 +24,7 @@
             <span>首页</span>
           </el-menu-item>
 
-            <el-menu-item index="2" @click="router.push('/index/article')">
+            <el-menu-item index="2" v-if="!(store.auth.user.adminUsername === 'zzx')" @click="router.push('/index/article')">
               <el-icon>
                 <document/>
               </el-icon>
@@ -38,52 +38,52 @@
             <span>课程管理</span>
           </el-menu-item>
 
-          <el-menu-item index="4" @click="router.push('/index/classify')">
+          <el-menu-item index="4" v-if="!(store.auth.user.adminUsername === 'zzx')" @click="router.push('/index/classify')">
             <el-icon><User /></el-icon>
             <span>分类管理</span>
           </el-menu-item>
 
-          <el-menu-item index="5" @click="router.push('/index/test')">
+          <el-menu-item index="5" v-if="!(store.auth.user.adminUsername === 'zzx')" @click="router.push('/index/test')">
             <el-icon><Van /></el-icon>
             <span>标签管理</span>
           </el-menu-item>
 
-          <el-menu-item index="6" @click="router.push('/index/comment')">
+          <el-menu-item index="6" v-if="!(store.auth.user.adminUsername === 'zzx')" @click="router.push('/index/comment')">
             <el-icon><Goods /></el-icon>
             <span>评论管理</span>
           </el-menu-item>
 
-          <el-menu-item index="12" @click="router.push('/index/userMessage')">
+          <el-menu-item index="12" v-if="!(store.auth.user.adminUsername === 'zzx')" @click="router.push('/index/userMessage')">
             <el-icon><Goods /></el-icon>
             <span>用户消息管理</span>
           </el-menu-item>
 
-          <el-menu-item index="13" @click="router.push('/index/systemMessage')">
+          <el-menu-item index="13" v-if="!(store.auth.user.adminUsername === 'zzx')" @click="router.push('/index/systemMessage')">
             <el-icon><Goods /></el-icon>
             <span>系统消息管理</span>
           </el-menu-item>
 
-          <el-menu-item index="7" @click="router.push('/index/user')">
+          <el-menu-item index="7" v-if="!(store.auth.user.adminUsername === 'zzx')" @click="router.push('/index/user')">
             <el-icon><Money /></el-icon>
             <span>用户管理</span>
           </el-menu-item>
 
-          <el-menu-item index="14" @click="router.push('/index/certificateTemplate')">
+          <el-menu-item index="14" v-if="!(store.auth.user.adminUsername === 'zzx')" @click="router.push('/index/certificateTemplate')">
             <el-icon><Goods /></el-icon>
             <span>模板管理</span>
           </el-menu-item>
 
-          <el-menu-item index="15" @click="router.push('/index/paymentChannel')">
+          <el-menu-item index="15" v-if="!(store.auth.user.adminUsername === 'zzx')" @click="router.push('/index/paymentChannel')">
             <el-icon><Goods /></el-icon>
             <span>支付渠道管理</span>
           </el-menu-item>
 
-          <el-menu-item index="8" @click="router.push('/index/resources')">
+          <el-menu-item index="8" v-if="!(store.auth.user.adminUsername === 'zzx')" @click="router.push('/index/resources')">
             <el-icon><Money /></el-icon>
             <span>资源管理</span>
           </el-menu-item>
 
-          <el-menu-item index="9" @click="router.push('/index/customerService')">
+          <el-menu-item index="9" v-if="!(store.auth.user.adminUsername === 'zzx')" @click="router.push('/index/customerService')">
             <el-icon><CoffeeCup /></el-icon>
             <span>客服管理</span>
           </el-menu-item>
@@ -122,7 +122,6 @@ const loginout = () => {
     router.push('/')
   })
 }
-
 
 </script>
 

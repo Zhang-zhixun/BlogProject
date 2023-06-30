@@ -19,6 +19,25 @@ public interface CourseMapper {
     })
     List<Course> findAllCourse();
 
+    @Select("""
+            select * from course where course_id in
+            (
+            	select course_id from teach where teacher_id =
+            	(
+            		select teacher_id from teacher where user_account_username = #{username}
+            	)
+            )
+            """)
+    @Results({
+            @Result(property = "courseId", column = "course_id"),
+            @Result(property = "courseName", column = "course_name"),
+            @Result(property = "courseDescription", column = "course_description"),
+            @Result(property = "coursePrice", column = "course_price"),
+            @Result(property = "teachers", column = "course_id", many = @Many(select = "com.backend.mapper.TeacherMapper.findTeacherByCourseId")),
+            @Result(property = "onlineStatus", column = "online_status")
+    })
+    List<Course> findAllCourseByUsername(String username);
+
     @Select("select * from blog.course where course_id = #{id}")
     @Results({
             @Result(property = "courseId", column = "course_id"),
@@ -40,6 +59,17 @@ public interface CourseMapper {
             @Result(property = "onlineStatus", column = "online_status")
     })
     List<Course> findCourseByName(String name);
+
+    @Select("call getByUNameCourse(#{name},#{uName})")
+    @Results({
+            @Result(property = "courseId", column = "course_id"),
+            @Result(property = "courseName", column = "course_name"),
+            @Result(property = "courseDescription", column = "course_description"),
+            @Result(property = "coursePrice", column = "course_price"),
+            @Result(property = "teachers", column = "course_id", many = @Many(select = "com.backend.mapper.TeacherMapper.findTeacherByCourseId")),
+            @Result(property = "onlineStatus", column = "online_status")
+    })
+    List<Course> findCourseByUName(String name,String uName);
 
     @Select("""
             select * from course
@@ -71,6 +101,26 @@ public interface CourseMapper {
             @Result(property = "onlineStatus", column = "online_status")
     })
     List<Course> findCourseByIsOnline(int status);
+
+    @Select("""
+            select * from blog.course where online_status = #{status}
+            and course_id in
+                (
+                	select course_id from teach where teacher_id =
+                	(
+                		select teacher_id from teacher where user_account_username = #{uname}
+                	)
+                );
+            """)
+    @Results({
+            @Result(property = "courseId", column = "course_id"),
+            @Result(property = "courseName", column = "course_name"),
+            @Result(property = "courseDescription", column = "course_description"),
+            @Result(property = "coursePrice", column = "course_price"),
+            @Result(property = "teachers", column = "course_id", many = @Many(select = "com.backend.mapper.TeacherMapper.findTeacherByCourseId")),
+            @Result(property = "onlineStatus", column = "online_status")
+    })
+    List<Course> findCourseByUIsOnline(int status, String uname);
 
     @Insert("""
             insert into blog.course (course_name,course_description,course_price,online_status) VALUES

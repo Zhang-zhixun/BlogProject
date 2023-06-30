@@ -28,9 +28,22 @@ public class CourseController {
         return RestBean.success(list);
     }
 
+    @GetMapping("/getCoursesByUsername/{username}")
+    RestBean<List<Course>> findCoursesByUsername(@PathVariable String username) {
+        List<Course> list = courseService.findAllCourseByUsername(username);
+        return RestBean.success(list);
+    }
+
     @PostMapping("/getCourseByCourseName")
     RestBean<List<Course> > findCourseByName(@RequestParam("name") String name) {
         List<Course> list = courseService.findCourseByName(name);
+        return RestBean.success(list);
+    }
+
+    @PostMapping("/getCourseByUName")
+    RestBean<List<Course> > findCourseByUName(@RequestParam("name") String name,
+                                              @RequestParam("uname") String uname) {
+        List<Course> list = courseService.findCourseByUName(name,uname);
         return RestBean.success(list);
     }
 
@@ -51,6 +64,14 @@ public class CourseController {
         List<Course> list = courseService.findCourseByIsOnline(status);
         return RestBean.success(list);
     }
+
+    @PostMapping("/CourseByUStatus")
+    RestBean<List<Course> > findCourseByUIsOnline(@RequestParam("status") int status,
+                                                  @RequestParam("uname") String uname) {
+        List<Course> list = courseService.findCourseByUIsOnline(status,uname);
+        return RestBean.success(list);
+    }
+
     @PostMapping("/insertCourse")
     RestBean<String> insertCourse(@RequestParam("courseName") String courseName,
                                   @RequestParam("courseDescription") String courseDescription,
